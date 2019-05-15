@@ -8,13 +8,13 @@
 
 
 
-    <table width="800">
+<table width="800">
         <tr>
             <th>Title</th>
             <th>Body</th>
             <th></th>
         </tr>
-<% @reviews.each do |review| %>
+    <% @reviews.each do |review| %>
         <tr>
             <td><%= review.title %></td>
             <td><%= review.body %></td>
@@ -23,8 +23,8 @@
                 <%= link_to "Destroy", review_path(review), method: :delete,  data: { confirm: '削除しますか？' }, class:"destroy_#{review.id} ", id: "mover3" %>
             </td>
         </tr>
-  <% end %>
-    </table>
+    <% end %>
+</table>
 
 
 
@@ -33,10 +33,10 @@
 
 <%= form_for(@review) do |f| %>
 
-	<p>title</p>
+	<p>Title</p>
     <%= f.text_field :title, class:"book_title" %>
  
-    <p>body</p>
+    <p>Body</p>
     <%= f.text_area :body, class:"book_body" %>
  
     <p><%= f.submit 'Create Book' %></p>
